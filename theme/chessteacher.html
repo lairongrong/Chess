@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Twitter Bootstrap 3 Fixed Layout Example</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.2.0/dist/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap-3.2.0/dist/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .list-group{
+            width: 200px;
+        }
+        .bs-example{
+            margin: 20px;
+        }
+
+        #myCarousel h2{
+            margin: 0;
+            color: #666;
+            padding-top: 90px;
+            font-size: 52px;
+            font-family: "trebuchet ms", sans-serif;
+        }
+        .item{
+            background: #333;
+            text-align: center;
+            height: 300px !important;
+        }
+        .header{
+            margin-top: 80px;
+        }
+
+        .teachers{
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<!-Navigation Bar->
+<nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">国际象棋</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="http://www.tutorialrepublic.com" target="_blank">首页</a></li>
+                <li><a href="http://www.tutorialrepublic.com/about-us.php" target="_blank">关于我们</a></li>
+                <li><a href="http://www.tutorialrepublic.com/contact-us.php" target="_blank">联系我们</a></li>
+            </ul>
+            <form role="search" class="navbar-form navbar-left">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">搜索 <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">课程</a></li>
+                                <li><a href="#">老师</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">其它</a></li>
+                            </ul>
+                        </div>
+                        <input type="text" class="form-control">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">Go</button>
+                    </span>
+                    </div>
+                </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">		
+                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>购物车</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container header">
+    <div>
+        <h2>初级班老师及课程安排</h2>
+    </div>
+ </div>
+
+<div class="container">
+    <div class="teachers">
+        <div class = col-xs-4>
+            <img src="teacher1.jpg">
+            <br>
+            <p class="text-left"><strong>王老师</strong><br><br>
+                In this article I have gathered 10 Best and Useful jQuery Calendar Plugins that would allow you to incorporate cool calendar features to your websites.
+                The following plugins are easy to use and take minimal efforts to add beautiful calendars to your web applications.
+                I hope you will find the list handy and useful for your projects, the time of old selects or drop down boxes for dates are over,
+                it is only a matter of “time” before you get stuck into the power of jQuery! Enjoy !!</p>
+        </div>
+        <div class="sche col-xs-8">
+            <table class="table table-condensed table-bordered table-hover">
+                <thead>
+                <tr class="warning">
+                    <th>时间</th>
+                    <th>星期一</th>
+                    <th>星期二</th>
+                    <th>星期三</th>
+                    <th>星期四</th>
+                    <th>星期五</th>
+                    <th>星期六</th>
+                    <th>星期日</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>10am</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>11am</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>x</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1pm</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>x</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2pm</td>
+                    <td></td>
+                    <td></td>
+                    <td>x</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3pm</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                </tr>
+                <tr>
+                    <td>4pm</td>
+                    <td></td>
+                    <td></td>
+                    <td>x</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>5pm</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>6pm</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>x</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<hr>
+
+<div class="container">
+    <div class="teachers">
+        <div class = col-xs-4>
+            <img src="teacher3.jpg">
+            <br>
+            <p class="text-left">teacher 2 introduction</p>
+        </div>
+        <div class="sche col-xs-8">
+            <table class="table table-condensed table-bordered table-hover">
+                <thead>
+                <tr class="warning">
+                    <th>时间</th>
+                    <th>星期一</th>
+                    <th>星期二</th>
+                    <th>星期三</th>
+                    <th>星期四</th>
+                    <th>星期五</th>
+                    <th>星期六</th>
+                    <th>星期日</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>10am</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>11am</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>x</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1pm</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>x</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2pm</td>
+                    <td></td>
+                    <td></td>
+                    <td>x</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3pm</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                </tr>
+                <tr>
+                    <td>4pm</td>
+                    <td></td>
+                    <td></td>
+                    <td>x</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>5pm</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>6pm</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>x</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="container">
+    <div class="teachers">
+        <div class = col-xs-4>
+            <img src="teacher2.jpg">
+            <br>
+            <p class="text-left">teacher 3 introduction</p>
+        </div>
+        <div class="sche col-xs-8">
+            <table class="table table-condensed table-bordered table-hover">
+                <thead>
+                <tr class="warning">
+                    <th>时间</th>
+                    <th>星期一</th>
+                    <th>星期二</th>
+                    <th>星期三</th>
+                    <th>星期四</th>
+                    <th>星期五</th>
+                    <th>星期六</th>
+                    <th>星期日</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>10am</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>11am</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>x</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>1pm</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>x</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2pm</td>
+                    <td></td>
+                    <td></td>
+                    <td>x</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3pm</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td>x</td>
+                </tr>
+                <tr>
+                    <td>4pm</td>
+                    <td></td>
+                    <td></td>
+                    <td>x</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>5pm</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>x</td>
+                    <td>x</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>6pm</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>x</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<hr>
+
+<!-Footer->
+    <div class="row">
+        <div class="col-sm-12">
+            <footer>
+                <p class="text-center">© Copyright 2014</p>
+            </footer>
+        </div>
+    </div>
+</div>
+</body>
+</html>

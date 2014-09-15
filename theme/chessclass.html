@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Twitter Bootstrap 3 Fixed Layout Example</title>
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.2.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-3.2.0/dist/css/bootstrap-theme.min.css">
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+    <script type="text/javascript" src="bootstrap-3.2.0/dist/js/bootstrap.min.js"></script>
+    <style type="text/css">
+        .list-group{
+            width: 200px;
+        }
+        .bs-example{
+            margin: 20px;
+        }
+
+        #myCarousel h2{
+            margin: 0;
+            color: #666;
+            padding-top: 90px;
+            font-size: 52px;
+            font-family: "trebuchet ms", sans-serif;
+        }
+        .item{
+            background: #333;
+            text-align: center;
+            height: 300px !important;
+        }
+        .carousel{
+            margin-top: 20px;
+        }
+
+        .header{
+            margin-top: 80px;
+        }
+        .chess{
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<!-Navigation Bar->
+<nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">国际象棋</a>
+        </div>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="http://www.tutorialrepublic.com" target="_blank">首页</a></li>
+                <li><a href="http://www.tutorialrepublic.com/about-us.php" target="_blank">关于我们</a></li>
+                <li><a href="http://www.tutorialrepublic.com/contact-us.php" target="_blank">联系我们</a></li>
+            </ul>
+            <form role="search" class="navbar-form navbar-left">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">搜索 <span class="caret"></span></button>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">课程</a></li>
+                                <li><a href="#">老师</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">其它</a></li>
+                            </ul>
+                        </div>
+                        <input type="text" class="form-control">
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default">Go</button>
+                    </span>
+                    </div>
+                </div>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">登录</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container header">
+    <div>
+        <h2>国际象棋课程简介</h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="chess">
+        <div class="panel panel-info level1">
+            <div class="panel-heading">
+                <h3 class="panel-title">初级</h3>
+            </div>
+            <div class="panel-body">
+                囯际象棋（英语：chess），又称欧洲象棋或西洋棋，是一种二人对弈的战略棋盘游戏。囯际象棋的棋盘由64个黑白相间的八乘八网格组成。这是世界上最流行的游戏之一，世界各地数以百万计的人在家中、俱乐部中、网络上以通信囯际象棋或比赛的型式游玩。
+
+                每位玩家一开始都各有16个棋子：一个国王、一个皇后、两个车、两个马、两个主教和八个士兵。六种棋子的移动类型都不一样。棋子是用来攻克对手的棋子，目标是将对方的国王处在不可避免的威胁之下以将死对方。除了将死，也可以通过对方自愿性地投降而获胜，通常会发生在大多数的棋子死亡或不可避免将死的时候。棋局也可以在一些情况下和局，导致没有玩家获胜。游戏过程被区分作三个阶段：囯际象棋开局、囯际象棋中局、囯际象棋残局。囯际象棋估计共有1043至1050种棋局变化。黑白棋子各16个，多用木或塑胶制成，也有用石材制作；较为精美的石头、玻璃（水晶）或金属制棋子常用作装饰摆设，囯际象棋或欧洲象棋为中国称呼。
+            </div>
+            <a href="chessteacher.html" title="了解初级班老师信息"><button type="button" class="btn btn-primary">更多信息</button></a>
+        </div>
+        <div class="panel panel-info level2">
+            <div class="panel-heading">
+                <h3 class="panel-title">中级</h3>
+            </div>
+            <div class="panel-body">
+                囯际象棋（英语：chess），又称欧洲象棋或西洋棋，是一种二人对弈的战略棋盘游戏。囯际象棋的棋盘由64个黑白相间的八乘八网格组成。这是世界上最流行的游戏之一，世界各地数以百万计的人在家中、俱乐部中、网络上以通信囯际象棋或比赛的型式游玩。
+
+                每位玩家一开始都各有16个棋子：一个国王、一个皇后、两个车、两个马、两个主教和八个士兵。六种棋子的移动类型都不一样。棋子是用来攻克对手的棋子，目标是将对方的国王处在不可避免的威胁之下以将死对方。除了将死，也可以通过对方自愿性地投降而获胜，通常会发生在大多数的棋子死亡或不可避免将死的时候。棋局也可以在一些情况下和局，导致没有玩家获胜。游戏过程被区分作三个阶段：囯际象棋开局、囯际象棋中局、囯际象棋残局。囯际象棋估计共有1043至1050种棋局变化。黑白棋子各16个，多用木或塑胶制成，也有用石材制作；较为精美的石头、玻璃（水晶）或金属制棋子常用作装饰摆设，囯际象棋或欧洲象棋为中国称呼。
+            </div>
+            <button type="button" class="btn btn-primary">更多信息</button>
+        </div>
+        <div class="panel panel-info level3">
+            <div class="panel-heading">
+                <h3 class="panel-title">高级</h3>
+            </div>
+            <div class="panel-body">
+                囯际象棋（英语：chess），又称欧洲象棋或西洋棋，是一种二人对弈的战略棋盘游戏。囯际象棋的棋盘由64个黑白相间的八乘八网格组成。这是世界上最流行的游戏之一，世界各地数以百万计的人在家中、俱乐部中、网络上以通信囯际象棋或比赛的型式游玩。
+
+                每位玩家一开始都各有16个棋子：一个国王、一个皇后、两个车、两个马、两个主教和八个士兵。六种棋子的移动类型都不一样。棋子是用来攻克对手的棋子，目标是将对方的国王处在不可避免的威胁之下以将死对方。除了将死，也可以通过对方自愿性地投降而获胜，通常会发生在大多数的棋子死亡或不可避免将死的时候。棋局也可以在一些情况下和局，导致没有玩家获胜。游戏过程被区分作三个阶段：囯际象棋开局、囯际象棋中局、囯际象棋残局。囯际象棋估计共有1043至1050种棋局变化。黑白棋子各16个，多用木或塑胶制成，也有用石材制作；较为精美的石头、玻璃（水晶）或金属制棋子常用作装饰摆设，囯际象棋或欧洲象棋为中国称呼。
+            </div>
+            <button type="button" class="btn btn-primary">更多信息</button>
+        </div>
+    </div>
+</div>
+
+
+<hr>
+
+<!-Footer->
+    <div class="row">
+        <div class="col-sm-12">
+            <footer>
+                <p class="text-center">© Copyright 2014</p>
+            </footer>
+        </div>
+    </div>
+</div>
+</body>
+</html>

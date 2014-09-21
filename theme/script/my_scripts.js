@@ -13,10 +13,10 @@ $(document).ready(function(){
         var response;
         $.ajax({
             type: "GET",
-            url: "http://glacial-inlet-2856.herokuapp.com/teachers",
-            dataType: "json",
-            /*jsonpCallback: "displayData",
-            jsonp: "callback",*/
+            url: "http://localhost:3000/teachers",
+            dataType: "jsonp",
+            jsonpCallback: "displayData",
+            jsonp: "callback",
             contentType:    'application/json',
             error: function(xhr, status, error) {
                 alert(xhr.statusText);

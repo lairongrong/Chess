@@ -1,21 +1,12 @@
 $(document).ready(function(){
     $('button.test').click(function(){
-        /*
-        $.getJSON("http://glacial-inlet-2856.herokuapp.com/teachers?callback=?", function(result){
-            //response data are now in the result variable
-            for(var i=0; i<result.length; i++)
-            {
-                alert(result[i]);
-            }
 
-        });
-        */
-        var response;
+        //JSONP to server to get teachers' information
+        //Then save it into javascript object
         $.ajax({
             type: "GET",
             url: "http://localhost:3000/teachers",
             dataType: "jsonp",
-            jsonpCallback: "displayData",
             jsonp: "callback",
             contentType:    'application/json',
             error: function(xhr, status, error) {
@@ -23,124 +14,83 @@ $(document).ready(function(){
                 alert(xhr.status);
                 alert(error);
             },
-            success: function() {
-                alert("success");
+            success: function(data) {
+                //javascript object: parse the received data and pass them to corresponding UI components
+                var teacherData = $.parseJSON(data);
+
+                displayTeacherInfo(teacherData);
             }
         });
+    });
 
-        var displayData = function (data) {
-            alert(data);
-            console.log(data);
-        };
-        });
-        /*
+    function displayTeacherInfo(data)
+    {
+        for(var i=0; i<data.length; i++)
+        {
+            var teacherIndex = "teacher" + i;
+            $("<div>").addClass(teacherIndex).addClass("row").appendTo(".main");
 
-                    var className = "teacher" + " row";
-                    $("<div>").addClass("teacher").addClass("row").appendTo(".main");
+            //add image + teacher description
+            $("<div>").addClass("col-xs-4").appendTo("."+teacherIndex);
+            var teacherIntroSelector = ".col-xs-4:eq(" + i + ")";
+            addTeacherIntro(teacherIntroSelector, data[i]);
 
-                    //add image + teacher description
-                    $("<div>").addClass("col-xs-4").appendTo(".teacher");
-                    $("<img/>").attr("src", "images/teacher1.jpg").appendTo(".col-xs-4");
-                    $("<br>").appendTo(".col-xs-4");
-                    $("<p><b>王老师</b></p>").appendTo(".col-xs-4");
-                    $("<p> In this article I have gathered 10 Best and Useful jQuery Calendar Plugins that would allow you to incorporate cool calendar features to your websites.</p>")
-                        .addClass("text-left").appendTo(".col-xs-4");
+            //add teacher's schedule
+            $("<div>").addClass("col-xs-8").appendTo("."+teacherIndex);
+            var classScheSelector = ".col-xs-8:eq(" + i + ")";
+            addClassSchedule(classScheSelector, data[i]);
 
-                    //add teacher's schedule
-                    $("<div>").addClass("col-xs-8").appendTo(".teacher");
-                    addClassSchedule("col-xs-8");
-                });
-         */
+            $("<hr>").appendTo(".main");
+        }
 
-    function addClassSchedule(className){
-        $("<table>").addClass("table table-condensed table-bordered table-hover").appendTo("." + className);
-        //add table header
-        $("<thead>").appendTo("table");
-        $("<tr>").addClass("warning").appendTo("thead");
-        $("<th>时间</th>").appendTo("thead tr");
-        $("<th>星期一</th>").appendTo("thead tr");
-        $("<th>星期二</th>").appendTo("thead tr");
-        $("<th>星期三</th>").appendTo("thead tr");
-        $("<th>星期四</th>").appendTo("thead tr");
-        $("<th>星期五</th>").appendTo("thead tr");
-        $("<th>星期六</th>").appendTo("thead tr");
-        $("<th>星期日</th>").appendTo("thead tr");
+    }
 
-        //add table body
-        $("<tbody>").appendTo("table");
+    function addTeacherIntro(selector, data){
+        var teacherPhoto = "images/" + "teacher1.jpg";
+        var teacherNameContext = "<p><b>" + data.Name +"</b></p>";
+        var description = "<p>" + data.Description + "</p>";
 
-        //add first row into table body
-        $("<tr>").appendTo("tbody");
-        $("tbody tr:eq(0)").append("<td>10am</td>")
-        .append("<td>x</td>")
-        .append("<td></td>")
-        .append("<td></td>")
-        .append("<td>x</td>")
-        .append("<td></td>")
-        .append("<td>x</td>")
-        .append("<td></td>");
+        $("<img>").attr("src", teacherPhoto).appendTo(selector);
+        $("<br>").appendTo(selector);
+        $(teacherNameContext).appendTo(selector);
+        $(description).addClass("text-left").appendTo(selector);
+    }
 
-        //add last row into table body
-
-        $("<tr>").appendTo("tbody");
-        $("tbody tr:eq(1)").append("<td>11am</td>")
-        .append("<td></td>")
-        .append("<td>x</td>")
-        .append("<td>x</td>")
-        .append("<td></td>")
-        .append("<td></td>")
-        .append("<td></td>")
-        .append("<td></td>");
-
-        $("<tr>").appendTo("tbody");
-        $("tbody tr:eq(2)").append("<td>1pm</td>")
-            .append("<td>x</td>")
+    function addClassScheduleRow(selector, index, timeslots)
+    {
+        $("<tr>").appendTo(selector);
+        var rowSelector = selector + " tr:eq(" + index +")";
+        $(rowSelector).append("<td>11am</td>")
             .append("<td></td>")
-            .append("<td></td>")
-            .append("<td>x</td>")
-            .append("<td></td>")
-            .append("<td>x</td>")
-            .append("<td></td>");
-
-        $("<tr>").appendTo("tbody");
-        $("tbody tr:eq(3)").append("<td>2pm</td>")
             .append("<td>x</td>")
             .append("<td>x</td>")
             .append("<td></td>")
             .append("<td></td>")
             .append("<td></td>")
-            .append("<td>x</td>")
-            .append("<td></td>");
-
-        $("<tr>").appendTo("tbody");
-        $("tbody tr:eq(4)").append("<td>3pm</td>")
-            .append("<td>x</td>")
-            .append("<td>x</td>")
-            .append("<td></td>")
-            .append("<td></td>")
-            .append("<td></td>")
-            .append("<td>x</td>")
-            .append("<td></td>");
-
-        $("<tr>").appendTo("tbody");
-        $("tbody tr:eq(5)").append("<td>4pm</td>")
-            .append("<td>x</td>")
-            .append("<td>x</td>")
-            .append("<td></td>")
-            .append("<td></td>")
-            .append("<td></td>")
-            .append("<td>x</td>")
-            .append("<td></td>");
-
-        $("<tr>").appendTo("tbody");
-        $("tbody tr:eq(6)").append("<td>5pm</td>")
-            .append("<td>x</td>")
-            .append("<td>x</td>")
-            .append("<td></td>")
-            .append("<td></td>")
-            .append("<td></td>")
-            .append("<td>x</td>")
             .append("<td></td>");
     }
 
-    });
+    //Create a function to generate class schedule
+    function addClassSchedule(selector, data) {
+        $("<table>").addClass("table table-condensed table-bordered table-hover").appendTo(selector);
+        //add table header
+        $("<thead>").appendTo(selector + " table");
+        $("<tr>").addClass("warning").appendTo(selector + " table thead");
+        $(selector + " table thead tr").append("<th>时间</th>")
+            .append("<th>星期一</th>")
+            .append("<th>星期二</th>")
+            .append("<th>星期三</th>")
+            .append("<th>星期四</th>")
+            .append("<th>星期五</th>")
+            .append("<th>星期六</th>")
+            .append("<th>星期日</th>");
+
+        //add table body
+        $("<tbody>").appendTo(selector + " table");
+        //add first row into table body
+        var tableBodySelector = selector + " table tbody";
+        for (var i = 0; i < 8; i++) {
+            addClassScheduleRow(tableBodySelector, i, data);
+        }
+    }
+    })

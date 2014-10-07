@@ -1,45 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="utf-8">
-    <title>Twitter Bootstrap 3 Fixed Layout Example</title>
+    <title>chess teacher</title>
     <link rel="stylesheet" type="text/css" href="bootstrap-3.2.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="bootstrap-3.2.0/dist/css/bootstrap-theme.min.css">
-    <script src="script/jquery-1.6.2.min.js"></script>
-    <script src="script/my_scripts.js"></script>
-    <script src="jquery-ui-1.8.16.custom/js/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
     <script type="text/javascript" src="bootstrap-3.2.0/dist/js/bootstrap.min.js"></script>
-    <style type="text/css">
-        .list-group{
-            width: 200px;
-        }
-        .bs-example{
-            margin: 20px;
-        }
-
-        #myCarousel h2{
-            margin: 0;
-            color: #666;
-            padding-top: 90px;
-            font-size: 52px;
-            font-family: "trebuchet ms", sans-serif;
-        }
-        .item{
-            background: #333;
-            text-align: center;
-            height: 300px !important;
-        }
+    <style>
         .header{
             margin-top: 80px;
-        }
-
-        .teachers{
-            margin-top: 40px;
         }
     </style>
 </head>
 <body>
-
 <!-Navigation Bar->
 <nav id="myNavbar" class="navbar navbar-default navbar-inverse navbar-fixed-top" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -79,7 +52,7 @@
                     </div>
                 </div>
             </form>
-            <ul class="nav navbar-nav navbar-right">		
+            <ul class="nav navbar-nav navbar-right">
                 <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span>购物车</a></li>
             </ul>
         </div>
@@ -91,21 +64,72 @@
         <h2>初级班老师及课程安排</h2>
         <br><br>
     </div>
- </div>
-
-<div class="container main">
 </div>
 
-<hr>
+<div class="container" ng-app="" ng-controller="customersController">
+    <div class="row" ng_repeat="teacher in teachers">
+        <div class="col-md-4">
+            <img src="images/teacher1.jpg">
+            <br>
+            <p><strong>{{teacher.Name}}</strong></p>
+
+        </div>
+        <div class="col-md-8">
+            <p>{{teacher.Description}}</p>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" ng-href="{{'#collapse_' + teacher.Name}}" ng-click="showScheduleTable(teacher)">课程安排>>></a>
+                        </h4>
+                    </div>
+                    <div ng-attr-id="{{'collapse_'+ teacher.Name}}" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <table class="table table-condensed table-bordered table-hover text-center">
+                                <thead>
+                                <tr class="warning">
+                                    <th class="text-center">时间</th>
+                                    <th class="text-center">星期一</th>
+                                    <th class="text-center">星期二</th>
+                                    <th class="text-center">星期三</th>
+                                    <th class="text-center">星期四</th>
+                                    <th class="text-center">星期五</th>
+                                    <th class="text-center">星期六</th>
+                                    <th class="text-center">星期日</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="row in teacher.schedule">
+                                    <td ng-repeat="val in row.time track by $index" ng-class="{success: val == 'available'}">
+                                        <span ng-show="$index==0">{{val}}</span>
+                                        <a ng-show="val=='available'" href="#" ng-style="{color:'black'}">选课</a>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><hr>
+        <!--add a underline here to separate teachers-->
+    </div>
+
+</div>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+<script src="script/my_scripts.js"> </script>
 
 <!-Footer->
-    <div class="row">
-        <div class="col-sm-12">
-            <footer>
-                <p class="text-center">© Copyright 2014</p>
-            </footer>
-        </div>
+<div class="row">
+    <div class="col-sm-12">
+        <footer>
+            <p class="text-center">© Copyright 2014</p>
+        </footer>
     </div>
+</div>
 </div>
 
 </body>
